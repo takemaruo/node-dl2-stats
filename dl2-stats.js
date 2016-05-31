@@ -2,8 +2,8 @@
 /**
 * dl2-stats.js
 */
-// DartsLive2 カードIDと暗証番号を記した profile.json を読み込む。
-var prof   = require('./profile.json');
+// DartsLive2 カードIDと暗証番号を記した DL2.json を読み込む。
+var prof   = require('~/DL2.json');
 
 // モジュール cheerio-httpcli 読み込む。
 var client = require('cheerio-httpcli');
