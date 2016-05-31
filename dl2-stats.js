@@ -2,10 +2,11 @@
 /**
 * dl2-stats.js
 */
-// DartsLive2 カードIDと暗証番号を記した DL2.json を読み込む。
-var prof   = require('~/DL2.json');
 
-// モジュール cheerio-httpcli 読み込む。
+// モジュール node-config を読み込む。
+var config = require('config');
+
+// モジュール cheerio-httpcli を読み込む。
 var client = require('cheerio-httpcli');
 
 client.fetch('https://card.dartslive.com/t/login.jsp')
@@ -13,8 +14,8 @@ client.fetch('https://card.dartslive.com/t/login.jsp')
         var form = result.$('#login > form');
 
         form.field({
-                i: prof['i'],
-                p: prof['p']
+                i: config.i,
+                p: config.p
         });
 
         // 送信ボタンを押してフォームを送信(コールバック形式)

@@ -1,6 +1,6 @@
 {
         "name": "dl2-stats",
-        "version": "0.0.1",
+        "version": "0.0.2",
 
         "description": "Showing Your DARTSLIVE Playing Data",
         "author": "takemaruo",
@@ -8,6 +8,8 @@
                 "node": ">=0.10"
         },
         "dependencies": {
+                "config": "latest",
+                "cheerio-httpcli": "latest"
         },
         "bin": {
                 "dl2-stats": "dl2-stats.js"
