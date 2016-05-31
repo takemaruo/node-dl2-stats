@@ -1,0 +1,16 @@
+{
+        "name": "dl2-stats",
+        "version": "0.0.1",
+
+        "description": "Showing Your DARTSLIVE Playing Data",
+        "author": "takemaruo",
+        "engines" : {
+                "node": ">=0.10"
+        },
+        "dependencies": {
+        },
+        "bin": {
+                "dl2-stats": "dl2-stats.js"
+        }
+}
+
