@@ -3,19 +3,19 @@
 * dl2-stats.js
 */
 
-// モジュール node-config を読み込む。
-var config = require('config');
-
 // モジュール cheerio-httpcli を読み込む。
 var client = require('cheerio-httpcli');
+
+// 設定を.envからロードする
+require('dotenv').config();
 
 client.fetch('https://card.dartslive.com/t/login.jsp')
 .then(function (result) {
         var form = result.$('#login > form');
 
         form.field({
-                i: config.i,
-                p: config.p
+                i: process.env.DL2_ID,
+                p: process.env.DL2_PIN
         });
 
         // 送信ボタンを押してフォームを送信(コールバック形式)
@@ -27,7 +27,7 @@ client.fetch('https://card.dartslive.com/t/login.jsp')
                 var playerName = $('h2.playerName').text();
                 var torina     = $('p.torina').text();
                 
-                console.log('"%s" %s', torina,playerName);
+                console.log('%s@%s', playerName,torina);
 
                 // プレイデータページに移動
                 client.fetch('https://card.dartslive.com/t/play/index.jsp')
